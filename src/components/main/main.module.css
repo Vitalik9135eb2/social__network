@@ -1,0 +1,11 @@
+.main {
+    background-color: #e9ebee;
+    display: flex;
+    flex-grow: 1;
+}
+
+.inner {
+    display: flex;
+    height: 100%;
+}
+

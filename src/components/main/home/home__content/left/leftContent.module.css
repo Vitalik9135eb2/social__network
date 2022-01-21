@@ -1,0 +1,28 @@
+
+
+.home__left {
+    width: 60%;
+}
+
+.posts__title {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.new__posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.new__postText {
+    margin-top: 20px;
+    padding: 20px 0 0 20px;
+    height: 150px;
+    resize: none;
+}
+
+.send__post {
+    margin-top: 20px;
+    width: 100px;
+    align-self: flex-end;
+}

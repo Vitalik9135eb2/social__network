@@ -1,0 +1,13 @@
+
+.home__btnWrap {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.home__btn {
+    margin-right: 10px;
+    border: 1px solid #dee0e3;
+    padding: 7px 12px;
+}
