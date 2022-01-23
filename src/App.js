@@ -2,14 +2,17 @@ import React from 'react'
 import './App.css';
 
 
+
 import Header from './components/header/Header';
 import Main from './components/main/Main';
 
-const App = () => {
+const App = (props) => {
+  
   return (
     <div className="app-wrapper">
       <Header/>    
-      <Main/>
+      <Main state={props.state}/>
+      
       
     </div>
   );

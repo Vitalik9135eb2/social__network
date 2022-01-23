@@ -2,7 +2,11 @@ import React from "react";
 import s from './leftContent.module.css';
 import PublishedPost from "./published__posts/PublishedPost";
 
-const LeftContent = () => {
+const LeftContent = (props) => {
+
+    
+    let postElement = props.messagePost.map( p =><PublishedPost message={p.message} currentLikes={p.currentLikes}/> )
+
     return (
 
         <div className={s.home__left}>
@@ -17,8 +21,7 @@ const LeftContent = () => {
                 </form>
 
                 <div className={s.published__posts}>
-                    <PublishedPost message="How are you?" currentLikes="10"/>
-                    <PublishedPost message="My first posts!" currentLikes="1"/>
+                    {postElement}
 
                 </div>
                 

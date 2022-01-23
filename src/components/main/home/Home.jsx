@@ -4,7 +4,7 @@ import HomeBtns from "./home__btns-block/HomeBtns";
 import HomeContent from "./home__content/HomeContent";
 import HomePicture from "./home__picture/HomePicture";
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className={s.home}>
 
@@ -12,7 +12,7 @@ const Home = () => {
 
             <HomeBtns/>
 
-            <HomeContent/>
+            <HomeContent messagePost={props.state.messagePost}/>
 
         </div>
 

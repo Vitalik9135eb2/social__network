@@ -3,11 +3,11 @@ import s from './homeContent.module.css';
 import LeftContent from "./left/LeftContent";
 import RightContent from "./right/RightContent";
 
-const HomeContent = () => {
+const HomeContent = (props) => {
     return (
 
         <div className={s.home__content}>
-            <LeftContent/>
+            <LeftContent messagePost={props.messagePost}/>
             <RightContent/>
         </div>
 

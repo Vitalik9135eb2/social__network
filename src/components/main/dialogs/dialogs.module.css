@@ -5,4 +5,26 @@
     flex-grow: 1;
     border-left: 2px solid #dee0e3;
     border-right: 2px solid #dee0e3;
+    display: flex;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-right: 1px solid #000;
+    padding-left: 30px;
+}
+.contact__title{
+    font-size: 18px;
+}
+.contact__list{
+    margin-top: 15px;
+}
+
+
+
+
+.messages{
+    flex-grow: 1;
 }

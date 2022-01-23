@@ -1,0 +1,21 @@
+
+.contact__item{
+    position: relative;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.contact__link::before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: grey;
+    top: 5px;
+    left: 5px;
+}
+.contact__link{
+    font-size: 16px;
+    color: #000;
+}
+
