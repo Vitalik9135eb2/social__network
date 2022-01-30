@@ -7,7 +7,7 @@ const HomeContent = (props) => {
     return (
 
         <div className={s.home__content}>
-            <LeftContent messagePost={props.messagePost}/>
+            <LeftContent homePage={props.homePage} addPostNew={props.addPostNew} updateNewPost={props.updateNewPost}/>
             <RightContent/>
         </div>
 

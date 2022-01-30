@@ -25,6 +25,32 @@
 
 
 
-.messages{
+.messages__wrap{
     flex-grow: 1;
+}
+.message__enter{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+.message__text{
+    width: 100%;
+    border-radius: 10px;
+    min-height: 70px;
+    display: block;
+    padding: 10px;
+    resize: none;
+}
+.messages__btn{
+    margin-top: 20px;
+}
+.message__enter button{
+    margin-top: 30px;
+    padding: 8px 25px;
+    max-width: 100px;
+    border-radius: 8px;
+    background-color: rgb(50, 144, 252);
+    align-self: flex-end;
 }

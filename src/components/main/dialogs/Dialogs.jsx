@@ -6,11 +6,21 @@ import Message from "./messages/Message";
 
 const Dialogs = (props) => {
 
-    
-    let contactElement = props.state.contact.map( u => <Contact name={u.name} id={u.id}/>)
 
-    
-    let messageElement = props.state.message.map( m => <Message name={m.name} text={m.text}/>)
+    let contactElement = props.state.contact.map(u => <Contact name={u.name} id={u.id} />);
+
+
+    let messageElement = props.state.message.map(m => <Message name={m.name} text={m.text} />);
+
+    let newMessage = React.createRef();
+    let sendText = () => {
+        props.addMessage("Me", );
+    };
+
+    let onMessageChange = () => {
+        let text = newMessage.current.value;
+        props.updateNewTextMessage(text);
+    }
 
     return (
         <div className={s.dialogs}>
@@ -26,8 +36,16 @@ const Dialogs = (props) => {
             </div>
 
 
-            <div className={s.messages}>    
-                {messageElement}
+            <div className={s.messages__wrap}>
+                <div className={s.message}>
+                    {messageElement}
+                </div>
+
+                <form className={s.message__enter}>
+                    <textarea onChange={onMessageChange} ref={newMessage} value={props.state.newTextMessage} className={s.message__text}/>
+
+                    <button onClick={sendText} className={s.message__btn} type="button">Send</button>
+                </form>
             </div>
 
         </div>
