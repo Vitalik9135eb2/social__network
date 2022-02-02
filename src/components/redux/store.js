@@ -1,3 +1,12 @@
+import dialogPageReduser from "./dialogPage-reduser";
+import homePageReduser from "./homePage-reduser";
+import sideBarReduser from "./sideBar-reduser";
+
+const Add_Post = "Add-Post";
+const Upddate_New_post = "Update-New-Post";
+const Add_Message = "Add-Message";
+const Update_New_Message = "Up-New-Message";
+
 
 
 let store = {
@@ -42,36 +51,22 @@ let store = {
         return this._state
     },
 
-    addPostNew () {
-        let newPost = {id:  this._state.homePage.messagePost.length + 1, message: this._state.homePage.newPostText, currentLikes: 0};
-        this._state.homePage.messagePost.push(newPost);
-        this._state.homePage.newPostText = " ";
-        this._callSubscribe(this._state)
-    },
-    updateNewPost  (newText) {
-        this._state.homePage.newPostText = newText;
-        this._callSubscribe(this._state)
-    
-    },
+    distpatch(action){
 
-    addMessage (user, ) {
-        
-        let newMessage = {id: this._state.dialogPage.message.length + 1, name: user, text: this._state.dialogPage.newTextMessage};
-        this._state.dialogPage.message.push(newMessage);
-        this._state.dialogPage.newTextMessage = " ";
+        this._state.sideBar = sideBarReduser(this._state.sideBar, action);
+        this._state.homePage = homePageReduser(this._state.homePage, action);
+        this._state.dialogPage = dialogPageReduser(this._state.dialogPage, action);
+
         this._callSubscribe(this._state)
     },
 
-    updateNewTextMessage (newText) {
-        this._state.dialogPage.newTextMessage = newText;
-        this._callSubscribe(this._state)
-    },
 
     subscribe (observer) {
         this._callSubscribe = observer;
     }
 
 }
+
 
 
 window.store = store;

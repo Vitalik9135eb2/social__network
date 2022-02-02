@@ -12,7 +12,7 @@ const Home = (props) => {
 
             <HomeBtns/>
 
-            <HomeContent homePage={props.homePage} addPostNew={props.addPostNew} updateNewPost={props.updateNewPost}/>
+            <HomeContent homePage={props.homePage} distpatch={props.distpatch}/>
 
         </div>
 

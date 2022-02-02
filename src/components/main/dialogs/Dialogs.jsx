@@ -2,6 +2,8 @@ import React from "react";
 import s from './dialogs.module.css';
 import Contact from "./contact/Contact";
 import Message from "./messages/Message";
+import { addMessageActionCreate, updateNewMessageActionCreate} from './../../redux/dialogPage-reduser';
+
 
 
 const Dialogs = (props) => {
@@ -14,12 +16,12 @@ const Dialogs = (props) => {
 
     let newMessage = React.createRef();
     let sendText = () => {
-        props.addMessage("Me", );
+        props.distpatch(addMessageActionCreate("Me"));
     };
 
     let onMessageChange = () => {
         let text = newMessage.current.value;
-        props.updateNewTextMessage(text);
+        props.distpatch(updateNewMessageActionCreate(text));
     }
 
     return (

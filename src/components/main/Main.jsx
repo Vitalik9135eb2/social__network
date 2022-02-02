@@ -20,13 +20,12 @@ const Main = (props) => {
                         <SitBar state={props.state.sideBar} />
                         <Routes>
                             <Route path='/home' element={<Home homePage={props.state.homePage} 
-                                                                addPostNew={props.addPostNew} 
-                                                                updateNewPost={props.updateNewPost}/>} />
+                                                                distpatch={props.distpatch} 
+                                                                />} />
                             <Route path='/about' element={<About/>} />
                             <Route path='/photos' element={<Photos/>} />
                             <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogPage} 
-                                                                        addMessage={props.addMessage}
-                                                                        updateNewTextMessage={props.updateNewTextMessage}/>} />
+                                                                        distpatch={props.distpatch} />} />
                             <Route path='/setting' element={<Setting/>} />
                         </Routes>
 

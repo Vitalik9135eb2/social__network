@@ -1,6 +1,9 @@
 import React from "react";
 import s from './leftContent.module.css';
 import PublishedPost from "./published__posts/PublishedPost";
+import { addPostActionCreate, updateNewPostActionCreate} from './../../../../redux/homePage-reduser';
+
+
 
 const LeftContent = (props) => {
 
@@ -8,12 +11,11 @@ const LeftContent = (props) => {
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.addPostNew();
-
+        props.distpatch(addPostActionCreate());
     }
     let onPostChange = () => {
         let text = newPostElement.current.value;;
-        props.updateNewPost(text);
+        props.distpatch(updateNewPostActionCreate(text));
     }
 
     return (
