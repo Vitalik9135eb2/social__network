@@ -23,7 +23,7 @@ let store = {
         
         homePage: {
             messagePost: [
-                {id: 1, message: "How are you?", currentLikes: 10},
+                
                 {id: 2, message: "My first posts!", currentLikes: 255},
             ],
             newPostText: "",

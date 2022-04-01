@@ -3,12 +3,13 @@
 
 
 
-const Add_Post = "Add-Post";
-const Upddate_New_post = "Update-New-Post";
-const Add_Message = "Add-Message";
-const Update_New_Message = "Up-New-Message";
+let initionalState = {
+    user:[
+        {id: 1, name: "Vitalii", email: "05vp94@mail.ru"},
+    ]
+}
 
-const sideBarReduser = (state, action) => {
+const sideBarReduser = (state = initionalState, action) => {
 
 
     return state

@@ -1,10 +1,17 @@
 
-
-
 const Add_Post = "Add-Post";
 const Upddate_New_post = "Update-New-Post";
 
-const homePageReduser = (state, action) => {
+let initionalState = {
+    messagePost: [
+        {id: 1, message: "How are you?", currentLikes: 10},
+        {id: 2, message: "My first posts!", currentLikes: 255},
+    ],
+    newPostText: "",
+}
+
+const homePageReduser = (state = initionalState, action) => {
+    
     switch(action.type){
         case Add_Post:
 

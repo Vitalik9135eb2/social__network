@@ -11,11 +11,11 @@ const LeftContent = (props) => {
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.distpatch(addPostActionCreate());
+        props.dispatch(addPostActionCreate());
     }
     let onPostChange = () => {
         let text = newPostElement.current.value;;
-        props.distpatch(updateNewPostActionCreate(text));
+        props.dispatch(updateNewPostActionCreate(text));
     }
 
     return (

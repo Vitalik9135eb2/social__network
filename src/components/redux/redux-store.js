@@ -1,6 +1,19 @@
-import {createStore} from "redux";
 
-let store = createStore()
+import dialogPageReduser from "./dialogPage-reduser";
+import homePageReduser from "./homePage-reduser";
+import sideBarReduser from "./sideBar-reduser";
+
+import {combineReducers, createStore} from "redux";
 
 
-export default store
+let redusers = combineReducers({
+    sideBar: sideBarReduser,
+    homePage: homePageReduser,
+    dialogPage: dialogPageReduser
+
+});
+
+let store = createStore(redusers)
+
+
+export default store;
