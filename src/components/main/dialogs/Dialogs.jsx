@@ -15,15 +15,18 @@ const Dialogs = (props) => {
     let messageElement = props.state.message.map(m => <Message name={m.name} text={m.text} />);
 
     let newMessage = React.createRef();
+
     let sendText = () => {
-        props.dispatch(addMessageActionCreate("Me"));
+        let me = "Me"
+        props.sendText(me)
     };
 
     let onMessageChange = () => {
         let text = newMessage.current.value;
-        props.dispatch(updateNewMessageActionCreate(text));
+        props.onMessageChange(text)
     }
 
+   
     return (
         <div className={s.dialogs}>
 

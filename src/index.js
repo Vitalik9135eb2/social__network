@@ -5,18 +5,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import { addPostNew,addMessage, updateNewTextMessage, subscribe, updateNewPost } from './components/redux/state';
-
-
 
 
 
 
 let rerenderEntireTree = (state) => {
 
+
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} 
+      <App store={store} 
           dispatch={store.dispatch.bind(store)} 
     
         />
@@ -24,6 +22,7 @@ let rerenderEntireTree = (state) => {
     document.getElementById('root')
   );
 }
+
 
 
 rerenderEntireTree (store.getState());

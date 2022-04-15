@@ -4,9 +4,12 @@ import avatar from './../../../../img/avatar__message.png'
 
 
 const Message = (props) => {
-    return (
 
-        <div className={s.message__wrap}>
+    let classNameMessageRow = props.name === "Me" ? s.message__wrap_rewerse : s.message__wrap 
+
+        return (
+
+        <div className={classNameMessageRow}>
             <div className={s.user}>
                 <img className={s.avatar} src={avatar} alt="" />
                 <span className={s.user__name}>{props.name}</span>

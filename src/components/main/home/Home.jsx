@@ -5,6 +5,9 @@ import HomeContent from "./home__content/HomeContent";
 import HomePicture from "./home__picture/HomePicture";
 
 const Home = (props) => {
+
+    
+
     return (
         <div className={s.home}>
 
@@ -12,7 +15,7 @@ const Home = (props) => {
 
             <HomeBtns/>
 
-            <HomeContent homePage={props.homePage} dispatch={props.dispatch}/>
+            <HomeContent store={props.store}/>
 
         </div>
 

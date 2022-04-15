@@ -11,8 +11,9 @@ const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header/>    
-      <Main state={props.state} 
-            dispatch={props.dispatch}
+      <Main store={props.store}
+            // state={props.state} 
+            // dispatch={props.dispatch}
             // addPostNew={props.addPostNew} 
             // updateNewPost={props.updateNewPost}
             // addMessage={props.addMessage} 
