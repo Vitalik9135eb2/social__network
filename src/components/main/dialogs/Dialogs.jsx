@@ -7,12 +7,11 @@ import { addMessageActionCreate, updateNewMessageActionCreate} from './../../red
 
 
 const Dialogs = (props) => {
+    
+    let contactElement = props.dialogPage.contact.map(u => <Contact name={u.name} id={u.id} />);
 
 
-    let contactElement = props.state.contact.map(u => <Contact name={u.name} id={u.id} />);
-
-
-    let messageElement = props.state.message.map(m => <Message name={m.name} text={m.text} />);
+    let messageElement = props.dialogPage.message.map(m => <Message name={m.name} text={m.text} />);
 
     let newMessage = React.createRef();
 
@@ -47,7 +46,7 @@ const Dialogs = (props) => {
                 </div>
 
                 <form className={s.message__enter}>
-                    <textarea onChange={onMessageChange} ref={newMessage} value={props.state.newTextMessage} className={s.message__text}/>
+                    <textarea onChange={onMessageChange} ref={newMessage} value={props.dialogPage.newTextMessage} className={s.message__text}/>
 
                     <button onClick={sendText} className={s.message__btn} type="button">Send</button>
                 </form>

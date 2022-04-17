@@ -15,7 +15,7 @@ const Home = (props) => {
 
             <HomeBtns/>
 
-            <HomeContent store={props.store}/>
+            <HomeContent/>
 
         </div>
 

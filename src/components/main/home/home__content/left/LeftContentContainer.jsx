@@ -2,25 +2,29 @@ import React from "react";
 
 import LeftContent from "./LeftContent";
 import { addPostActionCreate, updateNewPostActionCreate} from '../../../../redux/homePage-reduser';
+import { connect } from "react-redux";
 
 
 
-const LeftContentContainer = (props) => {
+let mapStateToProps = (state) => {
 
-    let state = props.store.getState()
-
-    let addPost = () => {
-        props.store.dispatch(addPostActionCreate());
+    return{
+        homePage: state.homePage
     }
-    let onPostChange = (text) => {
-        props.store.dispatch(updateNewPostActionCreate(text));
-    }
-
-    return (
-
-        <LeftContent state={state.homePage} newPost={onPostChange} addPost={addPost}/>
-
-    )
 }
+
+let mapDispatchToProps = (dispatch) =>{
+    return{
+        addPost: () => {
+            dispatch(addPostActionCreate())
+        },
+
+        onPostChange: (text) => {
+            dispatch(updateNewPostActionCreate(text))
+        }
+    }
+}
+
+const LeftContentContainer = connect (mapStateToProps,mapDispatchToProps) (LeftContent);
 
 export default LeftContentContainer;

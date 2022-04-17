@@ -8,9 +8,7 @@ const HomeContent = (props) => {
     return (
 
         <div className={s.home__content}>
-            {/* <LeftContent homePage={props.homePage} dispatch={props.dispatch}/> */}
-
-            <LeftContentContainer store={props.store} />
+            <LeftContentContainer  />
 
             <RightContent />
         </div>

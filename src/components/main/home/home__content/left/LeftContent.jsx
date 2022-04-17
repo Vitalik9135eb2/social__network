@@ -5,8 +5,7 @@ import PublishedPost from "./published__posts/PublishedPost";
 
 const LeftContent = (props) => {
 
-
-    let postElement = props.state.messagePost.map( p =><PublishedPost message={p.message} currentLikes={p.currentLikes}/> );
+    let postElement = props.homePage.messagePost.map( p =><PublishedPost message={p.message} currentLikes={p.currentLikes}/> );
 
     let newPostElement = React.createRef();
 
@@ -27,7 +26,7 @@ const LeftContent = (props) => {
             <div className={s.posts}>
 
                 <form className={s.new__posts}>
-                    <textarea ref={newPostElement} onChange={onPostChange} value={props.state.newPostText} className={s.new__postText} placeholder='your news...' />
+                    <textarea ref={newPostElement} onChange={onPostChange} value={props.homePage.newPostText} className={s.new__postText} placeholder='your news...' />
 
                     <button type="button" onClick={addPost} className={s.send__post}>Send</button>
                 </form>

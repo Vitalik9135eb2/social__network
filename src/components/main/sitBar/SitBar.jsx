@@ -1,5 +1,4 @@
 import React from "react";
-// import avatar from './../../../img/—Pngtree—vector male student icon_4255019.png';
 import avatar from './../../../img/—Pngtree—vector male student icon_4255019.png';
 import { NavLink } from "react-router-dom";
 import s from './sitBar.module.css';
@@ -11,14 +10,12 @@ const navBarActive = navData => navData.isActive ? s.active__link : s.navbar__li
 
 
 const SitBar = (props) => {
-
     
-    let state = props.store.getState();
 
-    let userData = state.sideBar.user.map(u => <User name={u.name} email={u.email}/>)
+    let userData = props.sideBar.user.map(u => <User name={u.name} email={u.email}/>)
 
-    
     return(
+
         <aside className={s.navbar}>
             <div className={s.navbar__inner}>
 
@@ -55,7 +52,6 @@ const SitBar = (props) => {
             </div>
 
         </aside>
-
 
     )
 }
