@@ -1,0 +1,80 @@
+
+.users{
+    padding: 50px;
+    background-color: #fff;
+    width: 81%;
+}
+.users__title{
+    font-size: 30px;
+}
+.users__content{
+    margin-top: 40px;
+}
+.users__item{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #d0cfcf;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+.users__info{
+    display: flex;
+    flex-direction: column;
+
+}
+.users__avatar{
+    width: 70px;
+    height: 70px;
+}
+
+.subscribe{
+    margin-top: 10px;
+    background-color: #52ffff;
+    font-size: 14px;
+    width: 75px;
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+.subscribe:disabled{
+    background-color: red;
+}
+.users__text{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding: 10px 20px;
+}
+.users__contact{
+    display: flex;
+    justify-content: space-between;
+}
+.users__name{
+    font-size: 18px;
+    font-weight: 500;
+}
+.users__locations span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.users__locations span:first-child{
+    margin-right: 5px;
+}
+.users__status{
+    margin-top: 20px;
+}
+
+.users__pagination{
+    display: flex;
+}
+
+.users__pagination_item{
+    cursor: pointer;
+    margin-right: 15px;
+    display: block;
+}
+.users__pagination_item.active{
+    font-weight: 700;
+
+}

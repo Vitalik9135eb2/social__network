@@ -1,29 +1,53 @@
 import React from 'react'
 import './App.css';
+import { connect } from "react-redux";
+import {initializedAppThunk} from "./components/redux/app-reduser";
+import { compose } from "redux";
+import { Redirect, withRouter } from 'react-router-dom';
 
 
-
-import Header from './components/header/Header';
+import HeaderContainer from './components/header/HeaderContainer';
 import Main from './components/main/Main';
+import Preloader from './components/preloader/preloader';
 
-const App = (props) => {  
+class App extends React.Component {
 
-  return (
-    <div className="app-wrapper">
-      <Header/>    
-      <Main 
-      // store={props.store}
-            // state={props.state} 
-            // dispatch={props.dispatch}
-            // addPostNew={props.addPostNew} 
-            // updateNewPost={props.updateNewPost}
-            // addMessage={props.addMessage} 
-            // updateNewTextMessage={props.updateNewTextMessage}
-          />
-      
-      
-    </div>
-  );
+  componentDidMount(){
+
+    this.props.initializedAppThunk()
+  }
+
+
+
+  render(){
+
+    if(!this.props.initialized){
+      return <Preloader/>
+    }
+    return (
+      <div className="app-wrapper">
+
+          <HeaderContainer />
+          <Main/>
+
+      </div>
+    );
+
+  }
+
+
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+// export default connect (mapStateToProps, {usersDataLoginThunk })(App);
+
+export default compose(
+  withRouter,
+
+  connect (mapStateToProps,{initializedAppThunk }),
+  // withAuthRedirect,
+  )
+(App)

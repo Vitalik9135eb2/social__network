@@ -1,0 +1,11 @@
+
+.textarea__wrap{
+    border: 1px solid red;
+}
+
+.textarea{
+    padding: 20px 0 0 20px;
+    min-height: 150px;
+    resize: none;
+    width: 100%
+}

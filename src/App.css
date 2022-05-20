@@ -32,3 +32,6 @@ button{background-color: #fff;}
   padding: 0 40px;
 }
 
+.app-wrapper ~ .preloader__wrap{
+  overflow: hidden !important;
+}

@@ -1,7 +1,6 @@
 
 
 const Add_Message = "Add-Message";
-const Update_New_Message = "Up-New-Message";
 
 
 let initionalState ={
@@ -17,38 +16,31 @@ let initionalState ={
         {id: 3, name:"Anna", text: "qwerty"},
         {id: 4, name:"Me", text: "What's?"},
     ],
-    newTextMessage: " ",
 
 }
 
 const dialogPageReduser = (state = initionalState, action) => {
+    // let stateCopy;
 
     switch(action.type){
         case Add_Message:
 
-            let newMessage = {id: state.message.length + 1, name: action.user, text: state.newTextMessage};
-            state.message.push(newMessage);
-            state.newTextMessage = " ";
-            return state;
+            let newMessage = {id: state.message.length + 1, name: action.me, text: action.newMessageInput};
 
-        case Update_New_Message:
-
-            state.newTextMessage = action.newText;
-            return state;
-
+            return {
+                ...state,
+                message:[...state.message, newMessage ],
+            };
+        
         default:
             return state;
     }
 }
 
-export const addMessageActionCreate = (user)=>{
+export const addMessage = (newMessageInput, me)=>{
     return {
-        type: Add_Message, user
+        type: Add_Message, newMessageInput, me
     }
 }
-export const updateNewMessageActionCreate = (text)=>{
-    return {
-        type: Update_New_Message, newText: text
-    }
-}
+
 export default dialogPageReduser;

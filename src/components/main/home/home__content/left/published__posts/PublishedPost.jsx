@@ -1,7 +1,7 @@
 import React from "react";
 import s from './publishedPost.module.css';
-import avatar1 from './../../../../../../img/avatar__post/free-icon-man-1184457.png';
-import avatar2 from './../../../../../../img/avatar__post/premium-icon-avatar-2633303.png';
+import avatar1 from './../../../../../../img/astronaut.png';
+// import avatar2 from './../../../../../../img/avatar__post/premium-icon-avatar-2633303.png';
 
 const PublishedPost = (props) => {
     return (

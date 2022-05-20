@@ -2,40 +2,40 @@ import React from "react";
 import Home from "./home/Home";
 import s from './main.module.css';
 import Setting from './setting/Setting';
-import About from "./about/About";
+import UsersContainer from "./users/UsersContainer";
 import Photos from './photos/Photos';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import DialogsContainer from "./dialogs/DialogsContainer";
 import SitBarContainer from "./sitBar/SitBarContainer";
+import Login from "../login/login"
 
 
 const Main = (props) => {
 
     return (
-        <BrowserRouter>
 
-            <section className={s.main}>
-                <div className='container'>
-                    <div className={s.inner}>
-                        <SitBarContainer
-                        // store={props.store} 
-                        />
-                        <Routes>
-                            <Route path='/home' element={<Home
-                            // store={props.store}
-                            />} />
-                            <Route path='/about' element={<About />} />
-                            <Route path='/photos' element={<Photos />} />
-                            <Route path='/dialogs/*' element={<DialogsContainer />} />
-                            <Route path='/setting' element={<Setting />} />
-                        </Routes>
+        <section className={s.main}>
+            <div className='container'>
+                <div className={s.inner}>
+
+                    <Route path='/login' component={Login} />
+
+                    <SitBarContainer />
+
+                    <Route path='/home/:userId?' component={Home} />
+                    <Route path='/users' component={UsersContainer} />
+                    <Route path='/photos' component={Photos} />
+                    <Route path='/dialogs/' component={DialogsContainer} />
+                    <Route path='/setting' component={Setting} />
 
 
-                    </div>
+
+
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </BrowserRouter>
+
     )
 }
 

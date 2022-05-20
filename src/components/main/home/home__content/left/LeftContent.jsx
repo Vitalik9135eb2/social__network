@@ -1,21 +1,37 @@
 import React from "react";
 import s from './leftContent.module.css';
 import PublishedPost from "./published__posts/PublishedPost";
+import { Field, reduxForm } from "redux-form"
+import { maxLengthCreator, required } from "./../../../../../ulits/validator/validatotr";
+import { textarea } from "../../../../form-item/formItem";
 
+
+let maxLength10 = maxLengthCreator(10)
+
+const addPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={s.new__posts}>
+            <Field  component={textarea} 
+                    name="newPostInput" 
+                    className={s.new__postText} 
+                    placeholder='your news...'
+                    validate={[required, maxLength10]}
+                    
+            />
+
+            <button className={s.send__post}>Send</button>
+        </form>
+    )
+}
+
+const ReduxAddPostForm = reduxForm({ form: "message" })(addPostForm)
 
 const LeftContent = (props) => {
 
-    let postElement = props.homePage.messagePost.map( p =><PublishedPost message={p.message} currentLikes={p.currentLikes}/> );
+    let postElement = props.messagePost.map(p => <PublishedPost message={p.message} key={p.id} currentLikes={p.currentLikes} />);
 
-    let newPostElement = React.createRef();
-
-    let addPost = () => {
-        props.addPost()
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;;
-        props.newPost(text)
+    let addPostText = (value) => {
+        props.addPost(value.newPostInput)
     }
 
     return (
@@ -25,18 +41,12 @@ const LeftContent = (props) => {
 
             <div className={s.posts}>
 
-                <form className={s.new__posts}>
-                    <textarea ref={newPostElement} onChange={onPostChange} value={props.homePage.newPostText} className={s.new__postText} placeholder='your news...' />
-
-                    <button type="button" onClick={addPost} className={s.send__post}>Send</button>
-                </form>
-
                 <div className={s.published__posts}>
                     {postElement}
 
                 </div>
-                
 
+                <ReduxAddPostForm onSubmit={addPostText}/>
 
             </div>
 

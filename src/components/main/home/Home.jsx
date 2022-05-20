@@ -1,7 +1,7 @@
 import React from "react";
 import s from './home.module.css';
 import HomeBtns from "./home__btns-block/HomeBtns";
-import HomeContent from "./home__content/HomeContent";
+import HomeContentContainer from "./home__content/HomeContentContainer";
 import HomePicture from "./home__picture/HomePicture";
 
 const Home = (props) => {
@@ -15,7 +15,7 @@ const Home = (props) => {
 
             <HomeBtns/>
 
-            <HomeContent/>
+            <HomeContentContainer/>
 
         </div>
 

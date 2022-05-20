@@ -1,5 +1,5 @@
 import React from "react";
-import bgHome from './../../../../img/railroad-g491e87643_640.jpg';
+import bgHome from './../../../../img/page-big.jpg';
 import s from './homePicture.module.css';
 
 const HomePicture = () => {
